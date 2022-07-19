@@ -9,11 +9,8 @@ export -n ACCESS_TOKEN
 export -n RUNNER_TOKEN
 
 # install some shiz
-systemctl unmask snapd.service
-systemctl enable snapd.service
-systemctl start snapd.service
-apt install -y snapd
-snap install docker
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
 
 deregister_runner() {
   echo "Caught SIGTERM. Deregistering runner"
