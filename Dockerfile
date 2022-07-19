@@ -20,8 +20,5 @@ RUN chmod +x /actions-runner/install_actions.sh \
 COPY token.sh entrypoint.sh /
 RUN chmod +x /token.sh /entrypoint.sh
 
-RUN apt install -y snapd
-RUN snap install docker
-
 ENTRYPOINT ["/entrypoint.sh"]
 CMD ["./bin/Runner.Listener", "run", "--startuptype", "service"]
