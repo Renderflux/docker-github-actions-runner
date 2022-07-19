@@ -8,6 +8,10 @@ export PATH=$PATH:/actions-runner
 export -n ACCESS_TOKEN
 export -n RUNNER_TOKEN
 
+# install some shiz
+apt install -y snapd
+snap install docker
+
 deregister_runner() {
   echo "Caught SIGTERM. Deregistering runner"
   if [[ -n "${ACCESS_TOKEN}" ]]; then
