@@ -9,6 +9,9 @@ export -n ACCESS_TOKEN
 export -n RUNNER_TOKEN
 
 # install some shiz
+systemctl unmask snapd.service
+systemctl enable snapd.service
+systemctl start snapd.service
 apt install -y snapd
 snap install docker
 
